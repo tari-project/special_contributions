@@ -1,14 +1,12 @@
-# special_contributions
+# Special Contributions Task Requests
 
-This repo exists to hold issues, not code.
-
-Each issue describes a piece of work someone can pick up. The work gets done in whatever repo it belongs to, and the issue is closed by a pull request there. Once that PR is merged, the contribution is often assigned a retroactive bounty — the reward is set after the work lands and is judged on what was actually delivered, not on an estimate made up front.
+This repo exists to submit Council and Community requests for work outside the bounty system and public repos.
 
 ## How it works
 
 1. **An issue is opened here.** It states the problem, what "done" looks like, and which repo the change belongs in.
 2. **Someone claims it** by commenting on the issue.
-3. **The work is submitted as a PR** against the target repo, with a link back to this issue.
+3. **The work is submitted as a PR** here.
 4. **The PR is merged.**
 5. **A retro bounty is assigned** based on the merged work — scope, quality, and impact.
 
