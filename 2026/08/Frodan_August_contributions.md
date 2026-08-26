@@ -1,0 +1,10 @@
+# Frodan's August Contributions
+
+A summary of security contributions by Frodan (Daniil Fronts, Decurity) in August 2026:
+
+* Reported a wallet-side vulnerability, tracked through `GHSA-f5fr-v7h5-w6q7`, that let any sender wedge a wallet holding a publicly-known one-sided address for the cost of dust plus a fee.
+* Identified that `add_stealth_recipient` in `base_layer/transaction_components/src/transaction_builder/builder.rs` passes the sender-supplied `OutputFeatures` (including `maturity`) straight into the recipient output with no sanity check, so a patched sender can mint a recipient output with `maturity = u64::MAX`. Consensus accepts it — maturity is only checked when an output is *spent*, not when it is *included* — so the output mines normally into the victim's wallet.
+* Traced the wallet-side impact to the `outputs.maturity` column being a Diesel `BigInt` (i64): `u64::MAX` coerces to `-1`, satisfying `maturity <= tip_height` at every block height. As a result `GetBalance` reported the locked amount in `availableBalance` instead of `timelockedBalance`, and safe-mode coin selection returned the unspendable dust as spendable — the wallet then built and broadcast a spend that the base node rejected at mempool admission with `InputMaturity`, and every subsequent small-amount transfer re-picked the same commitment and failed identically.
+* Highlighted the downstream financial-loss surface: exchanges, custody, and payment processors that credit deposits off the wrong `availableBalance`.
+* Provided a reproducible proof of concept (a patched-wallet Docker harness and a scripted one-sided `Transfer`) together with remediation guidance covering recipient-side maturity filtering, balance classification, and coin-selection safety.
+* The wallet filter was fixed via the `.ge(0)` maturity guards throughout `base_layer/wallet/src/output_manager_service/storage/sqlite_db/output_sql.rs` (the advisory's Option B), with the remaining in-band recovery-path work tracked in `tari-project/special_contributions#20`.
