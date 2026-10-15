@@ -1,0 +1,11 @@
+# 0xhra's August Contributions
+
+A summary of contributions by 0xhra in August of 2026:
+
+* Closed out the ScriptPath/HTLC wasm-bindings gap on tari-ootle with two merged PRs against the core L2 protocol repo:
+   * [#2426](https://github.com/tari-project/tari-ootle/pull/2426) exposed script-path witness construction for spending `PayTo::Conditions` outputs
+   * [#2431](https://github.com/tari-project/tari-ootle/pull/2431) followed up with `create_transfer_statement` for actually spending them
+   * Together they complete the wasm-side plumbing for HTLC-style conditional claim/refund spends that the wallet and dApp layers depend on
+* Published [`tari-cipherseed`](https://github.com/chironbuilds/tari-cipherseed), an unofficial, dependency-light TypeScript port of Tari's `CipherSeed` recovery-phrase format and Ristretto account-key derivation — byte-for-byte compatible with the official Rust wallet daemon, Aurora, and desktop wallet, covering all 7 upstream mnemonic languages. Correctness is checked against golden test vectors from the real Rust implementation, not just internal consistency. Published to npm as [`tari-cipherseed`](https://www.npmjs.com/package/tari-cipherseed) (v0.2.0, ~324 downloads/week)
+* Built and shipped [Veil](https://explorer.tari.mw), a public Tari Ootle L2 block explorer ([source](https://github.com/chironbuilds/ootle-explorer)) — live transactions, substates, templates (with a readable ABI/function-signature viewer, not just raw JSON), validators, and first-class visibility into stealth transfers and UTXOs, with an explicit veiled-vs-revealed distinction throughout matching Ootle's own privacy model. Reads directly from the public indexer with zero backend of its own
+* Contributed to [Sapient](https://github.com/chironbuilds/tari-wallet), a self-custody Chrome extension wallet for Tari Ootle — generates and holds its own recovery phrase, signs and submits transactions directly to the network, and exposes a MetaMask-style injected provider (`window.tari`) for dApps, including support for revealing Stealth-typed funds into a dApp's own contract call in a single signed transaction. Listed on the [Chrome Web Store](https://chromewebstore.google.com/detail/tari-ootle-wallet/demkeckolenopkgnfbnpflkpbbdhpgkl)
