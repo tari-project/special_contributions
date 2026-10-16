@@ -37,3 +37,8 @@ A summary of security contributions by GSXRspartan in October 2026:
 * The report demonstrated that a Byzantine committee member could cause unbounded validator parked-block storage growth through replayed-QC catch-up blocks referencing absent transactions, which were durably persisted and never garbage-collected.
 * The vulnerability was responsibly disclosed without interacting with any shared network and subsequently fixed separately by the Tari team in `tari-project/tari-ootle#2929`.
 * This contribution is tracked by `tari-project/special_contributions#201`.
+
+* Reported a Tari Ootle state-sync hash-only substate verification vulnerability through GitHub Security Advisories (`GHSA-5rx8-8wf2-rwv2`).
+* The report demonstrated that a Byzantine committee member could supply hash-only substate records during state sync that matched the trusted checkpoint root but omitted the underlying values, causing the validator to accept incomplete state and potentially fail when later transactions attempted to read those substates.
+* The vulnerability was responsibly disclosed without interacting with any shared network and subsequently fixed separately by the Tari team in `tari-project/tari-ootle#2935`.
+* This contribution is tracked by `tari-project/special_contributions#217`.
