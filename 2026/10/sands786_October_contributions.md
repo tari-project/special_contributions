@@ -45,5 +45,15 @@ A summary of security contributions by sands786 in October 2026:
 - Reported an unauthenticated ForeignProposal validation cost denial of service vulnerability in `tari-ootle` through GitHub Security Advisories ( GHSA-g592-vph9-hm4g ).
 - The report showed that unauthenticated ForeignProposal validation cost pins the consensus worker.
 - These contributions are tracked by tari-project/special_contributions#178.
+ ## [Bug_Hunt] Unauthenticated WebAuthn auth_start endpoint leaks username existence via allowCredentials (GHSA-9p3v-6v6f-8m76)
+
+- **Summary:** The unauthenticated WebAuthn `auth_start` endpoint returns an allowCredentials list that reflects whether the supplied username exists, allowing username registration to be tested without any credential.
+- **Fix:** tari-project/tari-ootle#3064
+- **Retro bounty issue:** tari-project/special_contributions#307
+
+- Reported an unauthenticated WebAuthn auth_start username existence leak in `tari-ootle` through GitHub Security Advisories ( GHSA-9p3v-6v6f-8m76 ).
+- The report showed that the allowCredentials list returned by auth_start reveals whether a username is registered.
+- These contributions are tracked by tari-project/special_contributions#307.
+
 
 
