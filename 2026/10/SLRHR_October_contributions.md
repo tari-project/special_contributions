@@ -16,6 +16,13 @@ The report identified that the StealthUtxoBurn path could bypass the expected re
 The fix was implemented separately. This file records the contribution for the retro bounty; no code changes are required.
 
 
+# Security contribution for issue #291
+
+Bug report for GHSA-mf7r-4pfr-2qg3.
+
+The report identified that coalesced UTXO protobuf frames are dropped and wallet scan cursor skips owned outputs.
+
+The fix was implemented separately by @sdbondi in tari-project/tari-ootle#3047. This file records the contribution for the retro bounty; no code changes are required.
 # Security contribution for issue #275
 
 Security report for GHSA-8v88-58fr-4878.
