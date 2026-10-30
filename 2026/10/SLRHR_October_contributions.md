@@ -14,3 +14,12 @@ Security report for the direct stealth UTXO burn authorization-bypass issue ackn
 The report identified that the StealthUtxoBurn path could bypass the expected resource authorization hook.
 
 The fix was implemented separately. This file records the contribution for the retro bounty; no code changes are required.
+
+
+# Security contribution for issue #274
+
+Security report for GHSA-66vp-q959-8w99.
+
+The report identified that disconnected transaction-event SSE replay streams retain background tasks beyond the connection limit.
+
+The fix was implemented separately by @sdbondi in tari-project/tari-ootle#3015. This file records the contribution for the retro bounty; no code changes are required.
