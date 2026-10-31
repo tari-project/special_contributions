@@ -25,3 +25,8 @@ A summary of contributions by @Brayaniglesias08 in October 2026:
 - **PR:** [tari-project/tari-ootle#3192](https://github.com/tari-project/tari-ootle/pull/3192)
 - **Issue:** [tari-project/special_contributions#374](https://github.com/tari-project/special_contributions/issues/374)
 - **Summary:** `fix(epoch-oracles): prevent premature tip short-circuit across multi-batch scans and lost DoneForNow`
+
+### Contribution (`tari-project/tari-ootle#3189` - Issue #381)
+- **PR:** [tari-project/tari-ootle#3189](https://github.com/tari-project/tari-ootle/pull/3189)
+- **Issue:** [tari-project/special_contributions#381](https://github.com/tari-project/special_contributions/issues/381)
+- **Summary:** `fix(wallet): verify indexer epoch, checkpoint layout, and substate reads at sign-act points`
