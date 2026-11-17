@@ -9,3 +9,4 @@ A summary of contributions by @e5ash in November 2026:
 - [tari-project/tari-ootle#3462](https://github.com/tari-project/tari-ootle/pull/3462): `fix(transaction_manifest): enforce intent cap, variable resolution, and literal bounds` (tracked in `tari-project/special_contributions#602`).
 - [tari-project/tari-ootle#3533](https://github.com/tari-project/tari-ootle/pull/3533): `fix(template_lib): fix VaultFreezeFlags iterator, ProofAccess drop safety, and address allocations` (tracked in `tari-project/special_contributions#606`).
 - [tari-project/tari-ootle#3661](https://github.com/tari-project/tari-ootle/pull/3661): `fix(engine): meter workspace args, bound return value item scans, and encode CallInfo in one pass` (tracked in `tari-project/special_contributions#607`).
+- [tari-project/tari-ootle#3667](https://github.com/tari-project/tari-ootle/pull/3667): `fix(consensus): enforce min_epoch validation ordering and consensus window check`.
